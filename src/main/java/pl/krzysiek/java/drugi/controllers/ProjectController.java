@@ -29,7 +29,7 @@ public class ProjectController {
     @PostMapping("save")
     public String createProject(Project project, Model model) {
 
-
+        iProRepo.save(project);
         return "projects/new";
     }
 }
