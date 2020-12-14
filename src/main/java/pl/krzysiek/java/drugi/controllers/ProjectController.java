@@ -30,6 +30,6 @@ public class ProjectController {
     public String createProject(Project project, Model model) {
 
         iProRepo.save(project);
-        return "projects/new";
+        return "redirect:/projects/new";
     }
 }
