@@ -29,7 +29,7 @@ public class HomeController {
         List<Employee> employees = iEmpRepo.findAll();
         model.addAttribute("employees", employees);
 
-        return "home";
+        return "main/home";
     }
 
 
