@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.krzysiek.java.drugi.dao.IEmployeeRepository;
 import pl.krzysiek.java.drugi.entities.Employee;
 
+import javax.persistence.GeneratedValue;
+
 @Controller
-@RequestMapping("/employee")
+@RequestMapping("/employees")
 public class EmployeeController {
 
     @Autowired
@@ -20,14 +22,19 @@ public class EmployeeController {
     public String displayEmployeeForm(Model model) {
 
         Employee anEmployee = new Employee();
-        model.addAttribute("employee", anEmployee);
+
+        model.addAttribute("employee",anEmployee);
+
         return "new-employee";
     }
 
     @PostMapping("/save")
-    public String registerEmployee(Employee employee, Model model) {
+    public String saveEmployee(Employee employee, Model model) {
 
         iEmpRepo.save(employee);
+
         return "redirect:/employees/new";
+        }
     }
-}
+
+

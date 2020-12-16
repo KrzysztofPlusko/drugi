@@ -11,9 +11,8 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long projectId;
-
     private String name;
-    private String stage;    // NONSTARTED, INPROGRESS, COMPLETED
+    private String stage;  // NONSTARTED, INPROGRESS, COMPLETED
     private String description;
 
     public Project() {

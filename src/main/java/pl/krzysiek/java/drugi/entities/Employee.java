@@ -15,14 +15,21 @@ public class Employee {
     private String lastName;
     private String email;
 
-
     public Employee() {
     }
 
-    public Employee( String firstName, String lastName, String email) {
+    public Employee(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+    }
+
+    public long getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(long employeeId) {
+        this.employeeId = employeeId;
     }
 
     public String getFirstName() {

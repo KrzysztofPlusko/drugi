@@ -16,7 +16,7 @@ public class ProjectController {
     @Autowired
     IProjectRepository iProRepo;
 
-    @GetMapping("new")
+    @GetMapping("/new")
     public String displayProjectForm(Model model) {
 
         Project aProject = new Project();
@@ -26,10 +26,11 @@ public class ProjectController {
         return "new-project";
     }
 
-    @PostMapping("save")
-    public String createProject(Project project, Model model) {
+    @PostMapping("/save")
+    public String saveProject(Project project, Model model) {
 
         iProRepo.save(project);
+
         return "redirect:/projects/new";
     }
 }
